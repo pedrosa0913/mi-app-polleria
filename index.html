@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Venta - Pollería</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a la Pollería</h1>
+    </header>
+    <main>
+        <section id="menu">
+            <h2>Menú</h2>
+            <ul>
+                <li>
+                    <span>1/2 Pollo</span>
+                    <span class="precio">$10</span>
+                    <button class="btn-agregar" onclick="agregarProducto('1/2 Pollo', 10)">Agregar</button>
+                </li>
+                <li>
+                    <span>1/4 de Pollo</span>
+                    <span class="precio">$7</span>
+                    <button class="btn-agregar" onclick="agregarProducto('1/4 de Pollo', 7)">Agregar</button>
+                </li>
+                <li>
+                    <span>1/8 de Pollo</span>
+                    <span class="precio">$5</span>
+                    <button class="btn-agregar" onclick="agregarProducto('1/8 de Pollo', 5)">Agregar</button>
+                </li>
+                <li>
+                    <span>Aguadito</span>
+                    <span class="precio">$6</span>
+                    <button class="btn-agregar" onclick="agregarProducto('Aguadito', 6)">Agregar</button>
+                </li>
+                <li>
+                    <span>Chaufa Mounstrito</span>
+                    <span class="precio">$8</span>
+                    <button class="btn-agregar" onclick="agregarProducto('Chaufa Mounstrito', 8)">Agregar</button>
+                </li>
+            </ul>
+        </section>
+        <section id="pedido">
+            <h2>Pedido</h2>
+            <form id="formulario-pedido">
+                <label for="nombreCliente">Nombre:</label>
+                <input type="text" id="nombreCliente" required><br><br>
+                
+                <label for="productosSeleccionados">Productos Seleccionados:</label>
+                <ul id="productosSeleccionados"></ul>
+                
+                <label for="total">Total:</label>
+                <input type="text" id="total" disabled><br><br>
+                
+                <button type="submit">Finalizar Pedido</button>
+            </form>
+        </section>
+        <section id="boleta" style="display:none;">
+            <!-- Aquí se generará dinámicamente la boleta -->
+            <div id="boleta-container"></div>
+            <button id="imprimirBtn" onclick="imprimirBoleta()">Imprimir Boleta</button>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
